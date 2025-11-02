@@ -16,18 +16,17 @@ def decode_image(image_path):
 
 image_url = 'asset/kucing-ayam.jpg' 
 
+base64_image = decode_image(image_url)
 
-# response = client.chat.completions.create(
-#     model='gpt-4o',
-#     messages=[
-#         {'role':'user', 'content':[
-#             {'type':'text', 'text':'Can you please describe this image?'},
-#             {'type':'image_url', 'image_url':{'url':image_url}}
-#         ]}
-#     ]
-# )
+response = client.chat.completions.create(
+    model='gpt-4o',
+    messages=[
+        {'role':'user', 'content':[
+            {'type':'text', 'text':'Can you please describe this image?'},
+            {'type':'image_url', 'image_url':{'url':f'data:image/jpg;base64,{base64_image}'}},
+        ]}
+    ]
+)
 
-# print(response.choices[0].message.content)
+print(response.choices[0].message.content)
 
-
-print(decode_image(image_url))
