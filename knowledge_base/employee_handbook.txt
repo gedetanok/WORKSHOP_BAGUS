@@ -1,0 +1,302 @@
+TECHVISION INDONESIA
+Employee Handbook 2024
+
+===========================================
+TABLE OF CONTENTS
+===========================================
+1. Welcome to TechVision
+2. Company Overview
+3. Work Schedule & Attendance
+4. Leave Policies
+5. Benefits & Compensation
+6. Code of Conduct
+7. Remote Work Policy
+
+===========================================
+1. WELCOME TO TECHVISION
+===========================================
+
+Welcome to TechVision Indonesia! We're excited to have you join our team. This handbook contains important information about our company policies, benefits, and expectations. Please read it carefully and keep it for future reference.
+
+TechVision Indonesia was founded in 2018 with a mission to revolutionize digital transformation in Southeast Asia. We specialize in AI-powered software solutions for enterprise clients across Indonesia, Singapore, and Malaysia.
+
+Our headquarters is located in Jakarta, with branch offices in Surabaya and Bali. We currently employ 250+ talented professionals across engineering, product, sales, and operations teams.
+
+===========================================
+2. COMPANY OVERVIEW
+===========================================
+
+Vision: To be Southeast Asia's leading AI technology partner by 2030.
+
+Mission: Empowering businesses through innovative AI solutions that drive measurable impact.
+
+Core Values:
+- Innovation First: We constantly push boundaries and embrace new technologies
+- Customer Success: Our clients' success is our success
+- Collaborative Spirit: We believe in the power of teamwork
+- Continuous Learning: We invest in our people's growth
+- Integrity Always: We conduct business with honesty and transparency
+
+Our Products:
+1. VisionAI Platform - Enterprise AI/ML platform
+2. SmartDoc - Document processing automation
+3. ChatAssist - Customer service AI chatbot
+4. DataInsight - Business intelligence dashboard
+
+===========================================
+3. WORK SCHEDULE & ATTENDANCE
+===========================================
+
+Standard Working Hours:
+- Monday to Friday: 9:00 AM - 6:00 PM (8 hours + 1 hour lunch)
+- Total: 40 hours per week
+- Lunch Break: 12:00 PM - 1:00 PM
+
+Flexible Working Hours:
+Employees may choose flexible start times between 8:00 AM - 10:00 AM, as long as they complete 8 working hours daily. Please coordinate with your team lead.
+
+Attendance Policy:
+- Employees are expected to be punctual and maintain good attendance
+- Tardiness: Arriving more than 15 minutes late without notice
+- More than 3 tardiness incidents per month may result in performance review
+- Absences must be reported to your manager before 9:00 AM
+
+Remote Work Days:
+- Eligible after 3 months of employment
+- Up to 2 days per week (Tuesday and Thursday preferred)
+- Must be approved by team lead
+- Full details in Section 7: Remote Work Policy
+
+===========================================
+4. LEAVE POLICIES
+===========================================
+
+Annual Leave:
+- 15 working days per year
+- Accrued monthly (1.25 days per month)
+- Can be taken after 3 months of employment
+- Maximum carry-over: 5 days to next year
+- Must be submitted 2 weeks in advance for approval
+
+Sick Leave:
+- 12 working days per year
+- Medical certificate required for absences exceeding 2 consecutive days
+- Can be used for personal illness or caring for immediate family members
+- Unused sick leave does not carry over
+
+Public Holidays:
+- All Indonesian national and religious holidays
+- Approximately 16-18 days per year
+- Announced annually by HR department
+
+Maternity Leave:
+- 3 months (90 days) fully paid
+- Additional 1 month unpaid leave available upon request
+- Must notify HR at least 2 months before expected due date
+
+Paternity Leave:
+- 10 working days fully paid
+- Must be taken within 1 month of child's birth
+- Requires birth certificate submission
+
+Marriage Leave:
+- 3 working days for employee's own marriage
+- 2 working days for immediate family member's marriage (children, siblings, parents)
+- Must be submitted at least 1 week in advance
+
+Bereavement Leave:
+- 3 working days for immediate family (parents, spouse, children, siblings)
+- 1 working day for extended family (grandparents, in-laws)
+- No advance notice required, but must inform manager as soon as possible
+
+Unpaid Leave:
+- Available after exhausting all paid leave
+- Maximum 5 days per year
+- Requires written approval from HR Director
+- Not eligible during probation period
+
+===========================================
+5. BENEFITS & COMPENSATION
+===========================================
+
+Salary:
+- Paid monthly on the 25th of each month
+- Bank transfer to employee's designated account
+- Salary slips available on employee portal
+- Annual salary review in January
+
+Health Insurance:
+- Comprehensive medical coverage for employee and immediate family
+- Partner hospitals: 50+ hospitals nationwide
+- Coverage: Outpatient, inpatient, dental, optical
+- Family definition: Spouse + up to 3 children
+- Premium fully covered by company
+
+BPJS (Government Social Security):
+- BPJS Kesehatan (Health): Company contribution 4%, Employee 1%
+- BPJS Ketenagakerjaan (Employment): Company contribution as per regulation
+- Automatic enrollment upon joining
+
+Meal Allowance:
+- IDR 50,000 per working day
+- Paid monthly with salary
+- Not applicable for remote work days
+
+Transportation Allowance:
+- IDR 30,000 per working day for on-site work
+- OR company shuttle service from designated points
+- Shuttle routes: Kelapa Gading, BSD, Bekasi, Bogor
+
+Annual Bonus:
+- Based on company performance and individual KPIs
+- Typically 1-2 months salary
+- Paid in January for previous year's performance
+- Prorated for employees joining mid-year
+
+Professional Development:
+- Annual training budget: IDR 10,000,000 per employee
+- Can be used for courses, certifications, conferences
+- Must be related to job function
+- Requires manager approval
+
+Laptop & Equipment:
+- Company-provided laptop (MacBook or ThinkPad)
+- Monitor, keyboard, mouse for office setup
+- Mobile phone allowance: IDR 500,000/month for senior roles
+- Equipment must be returned upon resignation
+
+Work from Home Setup:
+- One-time allowance: IDR 3,000,000
+- For ergonomic chair, desk, or other home office equipment
+- Eligible after passing probation
+
+Gym Membership:
+- Company partners with fitness centers
+- 50% subsidy up to IDR 300,000/month
+- List of partner gyms available on employee portal
+
+Team Building:
+- Quarterly team outings and activities
+- Annual company retreat
+- Department budgets for team bonding activities
+
+===========================================
+6. CODE OF CONDUCT
+===========================================
+
+Professional Behavior:
+- Treat all colleagues with respect and dignity
+- Maintain professional communication in all interactions
+- Dress code: Smart casual (jeans acceptable, no shorts/sandals)
+- Friday casual: More relaxed attire acceptable
+
+Confidentiality:
+- All company information is confidential
+- Client data must be protected per NDA agreements
+- No sharing of proprietary code, designs, or business strategies
+- Violation may result in immediate termination and legal action
+
+Conflict of Interest:
+- Employees must disclose any potential conflicts of interest
+- No accepting gifts or favors from clients/vendors exceeding IDR 500,000
+- No working for competitors or starting competing businesses
+- Side projects must be approved by management
+
+Harassment Policy:
+- Zero tolerance for harassment of any kind
+- Sexual, racial, or discriminatory behavior is strictly prohibited
+- Report incidents to HR immediately
+- Confidential investigation process
+- Whistleblower protection guaranteed
+
+Drug & Alcohol Policy:
+- Zero tolerance for drugs in workplace
+- Alcohol only permitted at company-sanctioned events
+- Employees under influence will be sent home
+- Repeated violations lead to termination
+
+Data Security:
+- Use strong passwords (changed every 90 days)
+- No sharing of login credentials
+- Lock computer when away from desk
+- Report security incidents immediately
+- No use of personal USB drives with company computers
+
+Social Media Guidelines:
+- Personal social media use is permitted
+- Do not share confidential company information
+- Do not speak on behalf of company without authorization
+- Maintain professional image when identifying as TechVision employee
+
+===========================================
+7. REMOTE WORK POLICY
+===========================================
+
+Eligibility:
+- Completed probation period (3 months)
+- Good performance record
+- Role suitable for remote work
+- Manager approval required
+
+Remote Work Days:
+- Maximum 2 days per week
+- Preferred days: Tuesday and Thursday
+- Must be scheduled in advance (at least 1 day notice)
+- Team leads may set team-specific policies
+
+Requirements:
+- Stable internet connection (minimum 25 Mbps)
+- Quiet, professional work environment
+- Available on Slack/Teams during working hours
+- Attend all scheduled meetings via video call
+
+Equipment:
+- Company laptop must be used
+- VPN connection required for accessing systems
+- Keep all software updated
+- IT support available remotely
+
+Expectations:
+- Same productivity standards as office work
+- Respond to messages within 30 minutes during work hours
+- Video must be on during meetings
+- Submit daily progress updates to manager
+
+Remote Work Allowance:
+- IDR 200,000 per month for internet and electricity
+- Paid with monthly salary
+- Only for approved remote work days
+
+Termination of Remote Work Privilege:
+- Consistent missed deadlines
+- Poor communication or unavailability
+- Failure to maintain productivity
+- May be revoked at manager's discretion
+
+Full Remote Work:
+- Available only for specific roles (approved by HR Director)
+- Must live within 4 hours of Jakarta for occasional office visits
+- Quarterly in-person meetings required
+- Separate policy document available
+
+===========================================
+ACKNOWLEDGMENT
+===========================================
+
+I acknowledge that I have received and read the TechVision Indonesia Employee Handbook. I understand that it is my responsibility to comply with the policies outlined in this handbook and any future revisions.
+
+I understand that this handbook is not a contract of employment and that my employment is at-will, meaning either the company or I can terminate the employment relationship at any time, with or without cause or notice.
+
+Employee Name: _______________________
+Employee ID: _______________________
+Signature: _______________________
+Date: _______________________
+
+For questions or clarifications, please contact:
+HR Department
+Email: hr@techvision.co.id
+Phone: +62 21 5555 1234
+Office: TechVision HQ, 15th Floor, Sudirman Plaza, Jakarta 12920
+
+Last Updated: January 2024
+Version: 2.0

@@ -1,0 +1,749 @@
+TECHVISION INDONESIA
+Information Technology Security Policy
+Version 2.1 | Effective Date: January 1, 2024
+
+===========================================
+DOCUMENT CONTROL
+===========================================
+Policy Owner: Chief Information Security Officer (CISO)
+Approved by: Executive Management Board
+Effective Date: January 1, 2024
+Review Date: December 31, 2024
+Classification: Internal - Mandatory Reading
+Distribution: All Employees, Contractors, Third-party Vendors
+
+===========================================
+1. PURPOSE AND SCOPE
+===========================================
+
+Purpose:
+This IT Security Policy establishes guidelines and requirements to protect TechVision Indonesia's information assets, systems, and data from unauthorized access, disclosure, modification, or destruction. This policy ensures compliance with relevant laws, regulations, and industry standards.
+
+Scope:
+This policy applies to:
+- All TechVision employees (full-time, part-time, contract)
+- Third-party vendors and consultants
+- Business partners with system access
+- All information systems owned or managed by TechVision
+- All data created, stored, processed, or transmitted by TechVision systems
+
+Exemptions:
+Any requests for policy exemptions must be submitted in writing to the CISO with business justification and risk assessment.
+
+===========================================
+2. INFORMATION CLASSIFICATION
+===========================================
+
+All information assets must be classified according to sensitivity:
+
+2.1 PUBLIC
+- Information intended for public consumption
+- Marketing materials, press releases
+- Public website content
+- No special protection required
+
+2.2 INTERNAL
+- General business information
+- Internal announcements, policies
+- Non-sensitive project documents
+- Requires basic access controls
+
+2.3 CONFIDENTIAL
+- Business-sensitive information
+- Financial reports, business plans
+- Employee personal information
+- Customer data (non-PII)
+- Source code repositories
+- Requires encryption and access logging
+
+2.4 RESTRICTED
+- Highly sensitive information
+- Customer PII (Personally Identifiable Information)
+- Payment card data
+- Trade secrets, proprietary algorithms
+- Legal documents, contracts
+- Requires encryption, strict access controls, audit trails
+
+Classification Labels:
+- All documents must include classification header
+- Email subject lines must include: [PUBLIC], [INTERNAL], [CONFIDENTIAL], or [RESTRICTED]
+- File names should include classification when possible
+
+Handling Requirements:
+- PUBLIC: No restrictions
+- INTERNAL: Share only with TechVision employees
+- CONFIDENTIAL: Share only with authorized personnel, encrypt when transmitting
+- RESTRICTED: Explicit approval required, encrypted storage and transmission mandatory
+
+===========================================
+3. ACCESS CONTROL
+===========================================
+
+3.1 User Account Management
+
+Account Creation:
+- Accounts created only upon HR approval
+- Unique username for each user
+- No shared accounts permitted
+- Initial password provided via secure channel
+- Must change password on first login
+
+Account Types:
+- Standard User: Regular employees
+- Privileged User: System administrators
+- Service Account: Automated processes (requires approval)
+- Temporary Account: Contractors (maximum 1 year, renewable)
+
+Account Review:
+- Quarterly access reviews by department heads
+- Annual comprehensive access audit
+- Immediate removal of unused accounts
+- Prompt deactivation upon termination
+
+3.2 Authentication Requirements
+
+Password Policy:
+- Minimum length: 12 characters
+- Must include: uppercase, lowercase, number, special character
+- No dictionary words or personal information
+- Cannot reuse last 10 passwords
+- Maximum age: 90 days
+- Account lockout after 5 failed attempts
+- Lockout duration: 30 minutes
+
+Multi-Factor Authentication (MFA):
+Required for:
+- All remote access (VPN, cloud services)
+- Privileged accounts (administrators)
+- Access to customer data
+- Financial systems
+- Email (mandatory for all employees)
+
+Acceptable MFA methods:
+- Authenticator app (Google Authenticator, Microsoft Authenticator)
+- Hardware token (YubiKey)
+- SMS (least preferred, use only if others unavailable)
+
+Single Sign-On (SSO):
+- Primary authentication method for cloud services
+- Integrated with Azure AD
+- MFA enforced at SSO level
+- Session timeout: 8 hours
+
+3.3 Authorization
+
+Principle of Least Privilege:
+- Users granted minimum access required for job function
+- Privileged access granted on as-needed basis
+- Time-limited elevated privileges (maximum 8 hours)
+- All privileged access logged and monitored
+
+Role-Based Access Control (RBAC):
+Standard roles defined:
+- Developer: Code repositories, development environments
+- Data Analyst: Business intelligence tools, databases (read-only)
+- System Administrator: Full system access
+- Support: Customer data (view only), support tools
+- Sales: CRM, customer information (non-PII)
+- HR: HRIS, employee data, recruitment systems
+
+Custom roles require CISO approval.
+
+Access Request Process:
+1. Submit request via IT Service Portal
+2. Manager approval required
+3. Security review for sensitive access
+4. Access granted within 24 hours (business days)
+5. Documented justification required
+6. Periodic access recertification
+
+===========================================
+4. DATA PROTECTION
+===========================================
+
+4.1 Data Encryption
+
+Encryption Standards:
+- Data at Rest: AES-256
+- Data in Transit: TLS 1.3 minimum
+- Database Encryption: Transparent Data Encryption (TDE)
+- Disk Encryption: BitLocker (Windows), FileVault (macOS)
+
+Mandatory Encryption:
+- All laptops and mobile devices
+- USB drives containing company data
+- Cloud storage (S3, Azure Blob, Google Cloud Storage)
+- Backup data
+- Customer PII
+- Financial information
+
+Key Management:
+- Centralized key management system (Azure Key Vault)
+- Keys rotated annually (minimum)
+- Keys encrypted with master key
+- Key access logged and monitored
+- Encryption keys never stored with encrypted data
+
+4.2 Data Storage
+
+Approved Storage Locations:
+- Company file servers (on-premise)
+- Microsoft OneDrive for Business
+- Google Drive (enterprise account)
+- AWS S3 (specific buckets only)
+- Company GitHub repositories (private repos only)
+
+Prohibited Storage:
+- Personal email accounts
+- Personal cloud storage (Dropbox, personal Google Drive)
+- Unencrypted USB drives
+- Personal devices (unless MDM enrolled)
+- Public GitHub repositories
+
+Data Retention:
+- Customer data: 7 years
+- Employee records: 10 years after termination
+- Financial records: 10 years
+- Email: 3 years
+- System logs: 1 year
+- Backup data: 90 days
+
+Data Disposal:
+- Secure deletion tools required (not simply "delete")
+- Physical media: Degaussing or physical destruction
+- Hard drives: DOD 5220.22-M standard (3-pass minimum)
+- Certificate of destruction required
+- Disposal logged and audited
+
+4.3 Data Loss Prevention (DLP)
+
+DLP System:
+- Monitors all outbound email and file transfers
+- Blocks transmission of sensitive data to unauthorized destinations
+- Detects credit card numbers, SSN, passport numbers
+- Flags suspicious data exfiltration patterns
+
+Blocked Activities:
+- Emailing CONFIDENTIAL data to personal accounts
+- Copying customer PII to USB drives
+- Uploading source code to public repositories
+- Sharing encryption keys via unsecured channels
+
+DLP Violations:
+- First violation: Warning and security training
+- Second violation: Written warning, manager notified
+- Third violation: Account suspension, HR involvement
+- Intentional violation: Immediate termination, legal action
+
+===========================================
+5. NETWORK SECURITY
+===========================================
+
+5.1 Network Architecture
+
+Network Segmentation:
+- Corporate network (internal users)
+- Production network (customer-facing services)
+- Development network (testing environments)
+- Guest network (visitors, no access to internal resources)
+- DMZ (public-facing web servers)
+
+Firewall Rules:
+- Default deny policy
+- Explicit allow rules only
+- Quarterly rule review and cleanup
+- All changes require change management approval
+- Rules documented with business justification
+
+5.2 Remote Access
+
+VPN Requirements:
+- Mandatory for all remote work
+- Company-provided VPN client only (Cisco AnyConnect)
+- Split tunneling prohibited
+- MFA required for connection
+- Automatic disconnect after 12 hours idle
+- VPN access logged and monitored
+
+Acceptable Remote Access:
+- Company-issued laptops only
+- VPN must be active for all work activities
+- Home networks must have WPA2/WPA3 encryption
+- No public WiFi for accessing company resources
+- Use mobile hotspot if public WiFi unavoidable
+
+Remote Desktop Protocol (RDP):
+- Disabled by default
+- Requires IT approval for specific use cases
+- Must use VPN connection
+- MFA required
+- Time-limited access (maximum 30 days)
+- All sessions recorded
+
+5.3 Wireless Security
+
+Corporate WiFi:
+- WPA3-Enterprise encryption
+- Certificate-based authentication
+- Separate SSIDs for employees and guests
+- Guest WiFi: Internet only, no internal access
+- Hidden SSID for corporate network
+
+Personal Hotspots:
+- Allowed for emergency backup connectivity
+- Must use WPA2/WPA3 encryption
+- Strong password required (minimum 12 characters)
+- Disable auto-connect to open networks
+- VPN required when using personal hotspot
+
+===========================================
+6. ENDPOINT SECURITY
+===========================================
+
+6.1 Device Management
+
+Approved Devices:
+- Company-issued Windows laptops (Dell, Lenovo)
+- Company-issued MacBooks (for developers/designers)
+- Company-issued Android/iOS phones (for senior staff)
+- Enrolled in Mobile Device Management (MDM)
+
+Device Requirements:
+- Automatic OS updates enabled
+- Full disk encryption enabled
+- Screen lock after 5 minutes idle
+- Biometric authentication (fingerprint/face) preferred
+- Anti-malware installed and updated
+- Personal firewall enabled
+
+Lost or Stolen Devices:
+- Report to IT immediately (hotline: +62 21 5555 1234)
+- Remote wipe initiated within 1 hour
+- Police report filed within 24 hours
+- New device issued after incident report
+- Review of data accessed on lost device
+
+6.2 Antivirus and Anti-malware
+
+Required Software:
+- Windows: Microsoft Defender + CrowdStrike
+- macOS: CrowdStrike
+- Mobile: Built-in security + MDM
+
+Configuration:
+- Real-time scanning enabled
+- Daily signature updates
+- Weekly full system scans
+- Quarantine suspicious files
+- Alerts sent to security team
+
+Prohibited Actions:
+- Disabling antivirus software
+- Excluding folders from scanning (without IT approval)
+- Installing pirated software
+- Downloading from untrusted sources
+- Ignoring security warnings
+
+6.3 Software Management
+
+Approved Software:
+- Maintained in IT portal
+- Pre-approved by security team
+- Licensed and properly procured
+- Regularly updated
+
+Installation Requirements:
+- Administrator approval required
+- Installation via company software portal
+- Automatic updates enabled
+- Security patches applied within 7 days of release
+- Critical patches within 24 hours
+
+Prohibited Software:
+- Unlicensed/pirated software
+- Peer-to-peer file sharing (BitTorrent, etc.)
+- Remote administration tools (unless approved)
+- Cryptocurrency mining software
+- Hacking or penetration testing tools (except for security team)
+
+===========================================
+7. EMAIL AND COMMUNICATION SECURITY
+===========================================
+
+7.1 Email Usage
+
+Acceptable Use:
+- Business communications
+- Professional correspondence with clients
+- Minimal personal use (reasonable limits)
+
+Prohibited Activities:
+- Sending spam or chain letters
+- Subscribing to non-work-related newsletters
+- Sharing confidential data to personal email
+- Opening suspicious attachments
+- Clicking unknown links
+
+Phishing Protection:
+- Advanced Threat Protection (ATP) enabled
+- Links rewritten and scanned
+- Attachments sandboxed before delivery
+- Suspicious emails automatically quarantined
+- Monthly phishing simulation tests
+
+Email Encryption:
+- S/MIME encryption available
+- Mandatory for RESTRICTED data
+- Optional for CONFIDENTIAL data
+- Recipients must have compatible email client
+
+Email Retention:
+- All emails archived for 3 years
+- Litigation hold capability
+- Personal folders discouraged
+- Regular mailbox cleanup encouraged (keep under 5GB)
+
+7.2 Instant Messaging
+
+Approved Platforms:
+- Microsoft Teams (primary)
+- Slack (for specific teams)
+- WhatsApp Business (customer communication only)
+
+Security Requirements:
+- Work discussions on approved platforms only
+- No sharing of credentials via chat
+- No file sharing of RESTRICTED data (use secure file transfer)
+- Chat history retained for 1 year
+- Screen sharing requires approval for sensitive content
+
+Prohibited Platforms:
+- Personal messaging apps (personal WhatsApp, Telegram, WeChat)
+- Anonymous chat platforms
+- Unencrypted messaging services
+
+7.3 Video Conferencing
+
+Approved Platforms:
+- Microsoft Teams (primary)
+- Zoom (enterprise account)
+- Google Meet (for external meetings)
+
+Security Best Practices:
+- Use waiting rooms for sensitive meetings
+- Require authentication for internal meetings
+- Enable end-to-end encryption when available
+- No recording of customer meetings without consent
+- Recordings stored on company systems only
+- Password-protect meetings with external participants
+
+===========================================
+8. INCIDENT RESPONSE
+===========================================
+
+8.1 Security Incidents
+
+Definition:
+Any event that compromises or threatens to compromise the confidentiality, integrity, or availability of information assets.
+
+Examples:
+- Malware infection
+- Unauthorized access
+- Data breach or leak
+- Lost or stolen device
+- Phishing attack
+- Denial of service
+- Insider threat
+- Physical security breach
+
+8.2 Reporting Procedures
+
+Immediate Reporting (Within 1 hour):
+- Security incident hotline: +62 21 5555 9999
+- Email: security@techvision.co.id
+- Emergency: Contact CISO directly
+
+Information to Provide:
+- Your name and contact information
+- Date and time of incident
+- Description of incident
+- Systems or data affected
+- Actions taken (if any)
+- Any evidence (screenshots, logs, emails)
+
+Do NOT:
+- Attempt to fix the issue yourself
+- Delete any evidence
+- Shut down affected systems (unless instructed)
+- Discuss incident publicly or on social media
+
+8.3 Incident Response Process
+
+Phase 1: Detection and Analysis (0-2 hours)
+- Incident verification
+- Severity assessment
+- Incident response team activation
+- Initial containment
+
+Phase 2: Containment and Eradication (2-24 hours)
+- Isolate affected systems
+- Preserve evidence
+- Remove threat
+- Patch vulnerabilities
+
+Phase 3: Recovery (24-72 hours)
+- Restore systems from clean backups
+- Verify system integrity
+- Monitor for recurrence
+- Return to normal operations
+
+Phase 4: Post-Incident (Within 1 week)
+- Incident report documentation
+- Root cause analysis
+- Lessons learned
+- Policy/procedure updates
+- Employee communication (if needed)
+
+8.4 Breach Notification
+
+External Notification Required:
+- Data breach affecting customer PII
+- Breach of regulated data (GDPR, HIPAA)
+- Material business impact
+
+Timeline:
+- Internal management: Within 24 hours
+- Regulatory authorities: Within 72 hours (GDPR)
+- Affected customers: Within 7 days
+- Public disclosure: As required by law
+
+Notification Process:
+1. Legal and compliance review
+2. Draft notification content
+3. Executive approval
+4. Coordinate with PR team
+5. Notify affected parties
+6. Provide remediation steps
+
+===========================================
+9. THIRD-PARTY SECURITY
+===========================================
+
+9.1 Vendor Risk Management
+
+Due Diligence Requirements:
+- Security questionnaire completion
+- SOC 2 or ISO 27001 certification
+- Insurance verification (cyber liability)
+- References from existing clients
+- Financial stability assessment
+
+Risk Assessment:
+- High Risk: Access to customer data, critical systems
+- Medium Risk: Access to internal data, non-critical systems
+- Low Risk: No data access, limited system interaction
+
+High-Risk Vendor Requirements:
+- Annual security audit
+- Penetration testing report
+- Incident response plan review
+- Business continuity plan
+- Compliance certifications
+- Data Processing Agreement (DPA)
+
+9.2 Vendor Access
+
+Access Provisioning:
+- Temporary accounts with expiration dates
+- VPN access with MFA
+- No shared credentials
+- Logged and monitored access
+- Just-in-time access provisioning
+
+Access Review:
+- Weekly active vendor access review
+- Quarterly comprehensive audit
+- Immediate revocation upon contract termination
+- Deactivate unused accounts after 30 days
+
+Vendor Requirements:
+- Sign Non-Disclosure Agreement (NDA)
+- Complete security awareness training
+- Acknowledge company security policies
+- Use separate accounts (not personal accounts)
+- No remote access to production without approval
+
+===========================================
+10. COMPLIANCE AND AUDIT
+===========================================
+
+10.1 Compliance Requirements
+
+Applicable Regulations:
+- Indonesian Electronic Information and Transaction Law (UU ITE)
+- Personal Data Protection (UU PDP)
+- GDPR (for EU customers)
+- PCI-DSS (for payment processing)
+- ISO 27001 (company certification)
+
+Internal Audits:
+- Quarterly: Access control review
+- Semi-annual: Security policy compliance
+- Annual: Comprehensive security audit
+- Ad-hoc: Incident-triggered audits
+
+External Audits:
+- Annual ISO 27001 certification audit
+- Annual SOC 2 Type II audit
+- PCI-DSS audit (if applicable)
+- Customer-requested audits
+
+10.2 Security Awareness Training
+
+Mandatory Training:
+New Employees:
+- Security awareness basics (first week)
+- Phishing identification (first month)
+- Policy acknowledgment (before system access)
+
+All Employees:
+- Annual security refresher training (January)
+- Monthly security newsletters
+- Quarterly phishing simulation tests
+- Role-specific training (as needed)
+
+Specialized Training:
+Developers:
+- Secure coding practices (bi-annual)
+- OWASP Top 10 (annual)
+
+Administrators:
+- Privileged access management (annual)
+- Incident response procedures (annual)
+
+Sales/Customer-facing:
+- Customer data protection (annual)
+- Social engineering awareness (semi-annual)
+
+Training Tracking:
+- Completion tracked in LMS
+- Certificate issued upon completion
+- Non-completion escalated to manager
+- Compliance reported to executives monthly
+
+10.3 Policy Violations
+
+Violation Categories:
+
+Minor Violations:
+- First-time policy oversight
+- No data compromise
+- Examples: Weak password, unlocked screen
+
+Consequences:
+- Verbal warning
+- Mandatory re-training
+- Manager notification
+
+Major Violations:
+- Repeated policy violations
+- Potential data exposure
+- Examples: Sharing credentials, circumventing controls
+
+Consequences:
+- Written warning
+- Formal HR process
+- Potential suspension
+- Security monitoring increased
+
+Critical Violations:
+- Intentional misconduct
+- Actual data breach
+- Examples: Data theft, malicious activity
+
+Consequences:
+- Immediate termination
+- Legal action
+- Law enforcement involvement
+- Criminal prosecution (if applicable)
+
+===========================================
+11. POLICY REVIEW AND UPDATES
+===========================================
+
+Review Schedule:
+- Annual comprehensive review
+- Quarterly minor updates as needed
+- Post-incident reviews
+- Regulatory change triggers
+
+Review Process:
+1. Security team drafts updates
+2. Stakeholder consultation
+3. Legal review
+4. Executive approval
+5. Communication to all employees
+6. Training updates (if needed)
+
+Version Control:
+- All versions archived
+- Change log maintained
+- Previous versions accessible for reference
+
+Employee Acknowledgment:
+- Must acknowledge policy annually
+- New employees acknowledge during onboarding
+- Major updates require re-acknowledgment
+- Non-acknowledgment escalated to HR
+
+===========================================
+12. CONTACT INFORMATION
+===========================================
+
+Security Team:
+Email: security@techvision.co.id
+Hotline: +62 21 5555 9999 (24/7)
+Slack: #security-team
+
+Chief Information Security Officer (CISO):
+Budi Santoso
+Email: budi.santoso@techvision.co.id
+Mobile: +62 812 3456 7890
+
+IT Helpdesk:
+Email: helpdesk@techvision.co.id
+Phone: +62 21 5555 1234
+Portal: https://helpdesk.techvision.co.id
+
+Incident Reporting:
+Email: security-incident@techvision.co.id
+Emergency: +62 21 5555 9999
+Anonymous: https://report.techvision.co.id
+
+===========================================
+ACKNOWLEDGMENT
+===========================================
+
+I acknowledge that I have read, understood, and agree to comply with the TechVision Indonesia Information Technology Security Policy. I understand that violation of this policy may result in disciplinary action, up to and including termination of employment and legal action.
+
+I understand that this policy may be updated from time to time and that it is my responsibility to stay informed of current policies.
+
+Employee Name: _______________________
+Employee ID: _______________________
+Department: _______________________
+Signature: _______________________
+Date: _______________________
+
+Manager Name: _______________________
+Manager Signature: _______________________
+Date: _______________________
+
+===========================================
+END OF POLICY DOCUMENT
+===========================================
+
+Document Classification: INTERNAL
+Version: 2.1
+Effective Date: January 1, 2024
+Next Review: December 31, 2024
+Page: 1 of 1
