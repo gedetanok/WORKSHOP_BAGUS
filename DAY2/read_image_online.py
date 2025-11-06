@@ -15,7 +15,7 @@ response = client.chat.completions.create(
     messages=[
         {'role':'user', 'content':[
             {'type':'text', 'text':'Can you please describe this image?'},
-            {'type':'image_url', 'image_url':{'url':image_url}}
+            {'type':'image_url', 'image_url':{'url':image_url}},
         ]}
     ]
 )
