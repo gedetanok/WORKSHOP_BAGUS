@@ -1,76 +1,60 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from langchain_openai import ChatOpenAI 
-# perlu system prompt
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.chat_history import InMemoryChatMessageHistory
-from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
-from langchain.agents import create_tool_calling_agent, AgentExecutor
+from langchain_core.prompts import ChatPromptTemplate
+from langchain.agents import create_agent
+from langgraph.checkpoint.memory import MemorySaver
 
+# 1) Definisikan tools
 @tool
 def multiply(a: float, b: float) -> float:
-    """Kalikan dua angka dan kembalikan nilainya"""
+    """Kalikan dua angka dan kembalikan hasilnya."""
     return a * b
 
 @tool
-def to_upper(txt: str) -> str:
-    """Ubah semua teks menjadi huruf kapital"""
-    return txt.upper()
-
+def to_upper(text: str) -> str:
+    """Ubah teks menjadi huruf kapital."""
+    return text.upper()
 
 TOOLS = [multiply, to_upper]
-# messages = []
 
-# chain = input -> llm -> output
-# chain = history message (chatrpmoop) -> llm (chatopenai) -> output
+# 2) System prompt untuk agent
+SYSTEM_PROMPT = """You are a helpful assistant.
+Use tools when they help solve the user's request.
+Prefer `multiply` for arithmetic like "x times y".
+Keep answers short and correct.
+"""
 
-# prompt
-SYSTEM_PROMPT = 'You are a helpful assistant. Use tools when they help solve the users request.' \
-'prefer "Multiply" for arithmetic like "x times y". Keep answers short and correct'
-
-prompt = ChatPromptTemplate.from_messages([
-    ('system', SYSTEM_PROMPT), # {role: fjkasbf, content: blablaba}
-    MessagesPlaceholder("chat_history"),
-    ('human', '{input}'),
-    MessagesPlaceholder('agent_scratchpad')
-])
-
-llm = ChatOpenAI(
-    model='gpt-4o-mini',
+# 3) Buat LLM & Agent dengan memory
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+memory = MemorySaver()
+agent_executor = create_agent(
+    llm,
+    TOOLS,
+    checkpointer=memory,
+    system_prompt=SYSTEM_PROMPT
 )
 
-# perlu berpikir: prompt -> LLM -> Analize -> Execute
-agent_runnable = create_tool_calling_agent(llm, TOOLS, prompt)
-executor = AgentExecutor(agent=agent_runnable, tools=TOOLS)
+# 4) Loop percakapan (agent + tools + memory)
+if __name__ == "__main__":
+    thread_id = "demo-user-2"
+    config = {"configurable": {"thread_id": thread_id}}
 
-# store per session
-session_store = {}
-def get_history(session_id):
-    if session_id not in session_store:
-        session_store[session_id] = InMemoryChatMessageHistory()
-    return session_store[session_id]
+    while True:
+        user_text = input("\nYou: ").strip()
+        if user_text.lower() in {"exit", "quit"}:
+            print("AI: Bye!"); break
 
-# chain
-agent_with_memory = RunnableWithMessageHistory(
-    executor, 
-    get_history,
-    input_messages_key="input",
-    history_messages_key="chat_history"
-)
+        # Invoke agent
+        result = agent_executor.invoke(
+            {"messages": [("user", user_text)]},
+            config=config
+        )
 
-# Chat looping
-session_id = 'demo-level-2'
-while True:
-    user_text = input('\nYou: ').strip()
-    
-    ai_message = agent_with_memory.invoke({
-        'input':user_text},
-        config={'configurable':{'session_id':session_id}})
-    
-    print(f"AI: {ai_message['output']}")
-
-
-
-
+        # Tampilkan response terakhir dari AI
+        if result["messages"]:
+            last_message = result["messages"][-1]
+            if hasattr(last_message, 'content'):
+                print(f"AI: {last_message.content}")
