@@ -211,10 +211,10 @@ class CodeReviewerAgent:
     Agent untuk review code.
     Memberikan feedback, suggestions, dan improvements.
     """
-    
+
     def __init__(self):
         self.llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.4)
-        self.tools = [read_file]
+        self.tools = [read_file, list_files]  # Added list_files to help find files
 
         system_prompt = """You are an expert code reviewer.
 
@@ -232,6 +232,9 @@ Review criteria:
 - Security issues
 - Test coverage
 - Documentation quality
+
+IMPORTANT: Always use read_file tool to actually read the files before reviewing them.
+If you're unsure which files exist, use list_files tool first.
 
 Be constructive and specific in your feedback.
 Highlight both good practices and areas for improvement."""
